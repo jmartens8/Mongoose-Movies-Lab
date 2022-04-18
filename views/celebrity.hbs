@@ -1,0 +1,12 @@
+<h2>This is ...</h2>
+{{#with celebrity}}
+
+	<h1>{{name}}</h1>
+	<p>{{occupation}}</p>
+	<p>{{catchPhrase}}</p>
+
+    <button><a href="/celebrities/{{_id}}/edit">Edit</a></button>
+    <button><a href="/celebrities/{{_id}}/delete">Delete</a></button>
+
+{{/with}}
+
