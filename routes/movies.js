@@ -53,6 +53,7 @@ router.get('/movies/:id/edit', (req, res, next) => {
       Celebrity.find()
       .then(celebritiesFromDB =>{
         console.log(celebritiesFromDB);
+        console.log('-------------------');
         console.log(movieFromDB);
         res.render('editMovie', { movie: movieFromDB, celebrities: celebritiesFromDB })
       })
@@ -68,12 +69,13 @@ router.post('/movies/:id/edit', (req, res, next) => {
   const { title, genre, plot, cast } = req.body
   const id = req.params.id
   Movie.findByIdAndUpdate(id, {
-    title,
-    genre,
-    plot,
-    cast
+    title: title,
+    genre: genre,
+    plot: plot,
+    cast: cast
   }, {new: true})
     .then(updatedMovie => {
+      console.log(updatedMovie);
       res.redirect(`/movies/${updatedMovie._id}`)
     })
     .catch(err => {
