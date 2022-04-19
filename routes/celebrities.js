@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Celebrity = require('../models/Celebrity.model')
+const Celebrity = require('../models/Celebrity')
 
 /* GET celebrities page */
 router.get('/celebrities', (req, res, next) => {

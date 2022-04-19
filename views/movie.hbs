@@ -1,0 +1,19 @@
+
+<h2>This is ...</h2>
+{{#with movie}}
+
+	<h1>Title: {{title}}</h1>
+	<p>Genre: {{genre}}</p>
+	<p>Plot: {{plot}}</p>
+
+    <h3>Cast:</h3>
+    <ul>
+        {{#each cast}}
+        <li>{{name}}</li>
+        {{/each}}
+    </ul>
+
+    <button><a href="/movies/{{_id}}/edit">Edit</a></button>
+    <button><a href="/movies/{{_id}}/delete">Delete</a></button>
+
+{{/with}}

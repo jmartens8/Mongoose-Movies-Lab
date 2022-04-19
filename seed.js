@@ -1,6 +1,7 @@
 const Celebrity = require('./models/Celebrity.model')
 
 const mongoose = require('mongoose')
+const Movie = require('./models/Movie.model')
 mongoose.connect('mongodb://localhost/boilerplate')
 
 const celebrities = [
@@ -29,3 +30,4 @@ Celebrity.insertMany(celebrities)
 	.catch(err => {
 		console.log(err)
 	})
+
